@@ -1,13 +1,13 @@
 import React from "react";
 
 interface OutlinedComponentProps {
-  title: string;
-  additionalClass: string;
+  title: React.ReactNode;
+  additionalClass: React.ReactNode;
 }
 function OutlinedComponent(props: OutlinedComponentProps) {
-  const classN = `p-3 rounded-full border-2 flex m-2 ${props.additionalClass}`;
+  const classN = `px-3 py-1 rounded-full box-border manrope-400 border-2 border-black w-fit text-sm ${props.additionalClass}`;
 
-  return <div className={classN}>{props.title}</div>;
+  return <p className={classN}>{props.title}</p>;
 }
 
 export default OutlinedComponent;
