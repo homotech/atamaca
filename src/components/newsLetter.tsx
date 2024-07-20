@@ -7,11 +7,11 @@ import InputComponent from "./inputComponent";
 
 export default function NewsLetter() {
   return (
-    <div className="flex flex-col md:flex-row px-8 pb-8 pt-6 gap-4 bg-[#F6F6F6] md:justify-between">
+    <div className="flex flex-col md:flex-row mx-8 pb-8 pt-6 gap-4 bg-[#F6F6F6] md:justify-between">
       <div className="md:w-5/12 md:mt-10">
         <OutlinedComponent
           title="newsletter"
-          additionalClass=""
+          additionalClass="border-[#898C8D]"
         ></OutlinedComponent>
       </div>
 
@@ -25,7 +25,11 @@ export default function NewsLetter() {
           className="flex justify-between mt-4 w-full gap-4 md:mb-6"
         >
           <InputComponent placeholder="Enter Email Address"></InputComponent>
-          <Button title="Subscribe" icons={faArrowRight}></Button>
+          <Button
+            title="Subscribe"
+            icons={faArrowRight}
+            additionalClass=""
+          ></Button>
         </form>
       </div>
     </div>

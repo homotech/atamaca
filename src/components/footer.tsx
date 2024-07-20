@@ -17,8 +17,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="px-8 flex flex-col md:flex-row md:items-center md:justify-between">
-      <span className="mt-2 mb-4 md:m-0 md:w-4/12 text-[#898C8D]">
+    <footer className="mx-8 flex flex-col md:flex-row md:items-center md:justify-between border-t-2">
+      <span className="mt-4 mb-4 md:m-0 md:w-4/12 text-[#898C8D]">
         @2023. All Rights Reserved
       </span>
       <Image src={Logo} alt="The brands logo" className="opacity-50"></Image>
