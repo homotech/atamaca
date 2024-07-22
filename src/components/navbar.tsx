@@ -36,6 +36,11 @@ function Navbar() {
   const navLinkClassName =
     "nav-links bg-[#F6F6F6] px-6 py-3 lg:text-xs rounded-full box-border xl:text-base cursor-pointer";
 
+  const btnLinkClassname =
+    "bg-[#F6F6F6] h-full px-6 py-3 lg:text-xs rounded-full flex items-center gap-2 justify-between w-full xl:text-base";
+
+  const subLinks = "p-4 lg:text-xs nav-links xl:text-base";
+
   return (
     <nav className="flex flex-col lg:flex-row lg:justify-between lg:items-center py-4">
       <div
@@ -68,77 +73,46 @@ function Navbar() {
         }`}
       >
         <div className="w-full relative">
-          <button
-            onClick={sProblems}
-            className="bg-[#F6F6F6] h-full px-6 py-3 lg:text-xs rounded-full flex items-center gap-2 justify-between w-full xl:text-base"
-          >
-            Problems{" "}
-            <FontAwesomeIcon
-              className="w-3 rounded-full"
-              icon={faChevronDown}
-            />
+          <button onClick={sProblems} className={btnLinkClassname}>
+            Problems <FontAwesomeIcon className="w-3" icon={faChevronDown} />
           </button>
           <div
-            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 z-10 lg:text-center lg:absolute ${
+            className={`flex flex-col bg-[#f6f6f6] rounded-2xl mt-4 z-10 lg:absolute ${
               showProblems ? "flex" : "hidden"
             }`}
           >
-            <Link
-              className="px-6 lg:text-xs py-2 nav-links xl:text-base"
-              href="/"
-            >
+            <Link className={subLinks} href="/">
               Problems 1
             </Link>
             <hr />
-            <Link
-              className="px-6 lg:text-xs py-2 nav-links xl:text-base"
-              href="/"
-            >
+            <Link className={subLinks} href="/">
               Problems 2
             </Link>
             <hr />
-            <Link
-              className="px-6 lg:text-xs py-2 nav-links xl:text-base"
-              href="/"
-            >
+            <Link className={subLinks} href="/">
               Problems 3
             </Link>
           </div>
         </div>
         <div className="w-full">
-          <button
-            onClick={sProjects}
-            className="bg-[#F6F6F6] h-full lg:text-xs px-6 py-3 rounded-full gap-2 flex items-center justify-between w-full xl:text-base"
-          >
+          <button onClick={sProjects} className={btnLinkClassname}>
             Projects
-            <FontAwesomeIcon
-              className="w-3 rounded-full"
-              icon={faChevronDown}
-            />
+            <FontAwesomeIcon className="w-3" icon={faChevronDown} />
           </button>
           <div
-            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 z-10 lg:absolute ${
+            className={`flex flex-col bg-[#f6f6f6] rounded-2xl mt-4 z-10 lg:absolute ${
               showProjects ? "flex" : "hidden"
             }`}
           >
-            <Link
-              className="nav-links lg:text-xs px-6 py-3 xl:text-base"
-              href="/"
-            >
+            <Link className={subLinks} href="/">
               Projects 1
             </Link>
             <hr />
-            <Link
-              className="nav-links lg:text-xs px-6 py-3 xl:text-base"
-              href="/"
-            >
+            <Link className={subLinks} href="/">
               Projects 2
             </Link>
             <hr />
-            <Link
-              className="nav-links lg:text-xs px-6 py-3 xl:text-base"
-              href="/"
-            >
+            <Link className={subLinks} href="/">
               Projects 3
             </Link>
           </div>
