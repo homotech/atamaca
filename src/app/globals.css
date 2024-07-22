@@ -49,7 +49,7 @@ body {
   font-weight: 800;
 }
 
-.nav-links::before {
+/* .nav-links::before {
   content: "";
   width: 10px;
   height: 10px;
@@ -57,11 +57,14 @@ body {
   background-color: #1f1f1f;
   display: none;
   margin-right: 1rem;
-}
+} */
 
 .nav-links:hover {
-  font-weight: 500;
+  font-weight: 700;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  transition: font-weight 0.3s;
 }
-.nav-links:hover::before {
+/* .nav-links:hover::before {
   display: inline-flex;
-}
+} */

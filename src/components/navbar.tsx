@@ -33,19 +33,18 @@ function Navbar() {
     { title: "Our Mission", href: "/ourMission" },
   ];
 
+  const navLinkClassName =
+    "nav-links bg-[#F6F6F6] px-6 py-3 lg:text-xs rounded-full box-border xl:text-base cursor-pointer";
+
   return (
     <nav className="flex flex-col lg:flex-row lg:justify-between lg:items-center py-4">
       <div
         className={`order-2 lg:order-1 box-border lg:flex-row flex flex-col px-4 gap-4 mt-4 lg:m-0 lg:flex  lg:h-12 ${
-          !showMenu && "sm:hidden "
+          !showMenu && "hidden "
         }`}
       >
         {firstThree.map((item, index) => (
-          <Link
-            key={index}
-            href={item.href}
-            className="nav-links bg-[#F6F6F6] px-6 py-3 rounded-full box-border"
-          >
+          <Link key={index} href={item.href} className={navLinkClassName}>
             {item.title}
           </Link>
         ))}
@@ -65,13 +64,13 @@ function Navbar() {
       </Link>
       <div
         className={`order-3 lg:h-12 flex flex-col lg:flex-row px-4 gap-4 mt-4 lg:m-0 lg:flex lg:w-4/8 ${
-          !showMenu && "sm:hidden"
+          !showMenu && "hidden"
         }`}
       >
-        <div className="w-full">
+        <div className="w-full relative">
           <button
             onClick={sProblems}
-            className="bg-[#F6F6F6] h-full px-6 py-3 rounded-full flex items-center gap-2 justify-between w-full"
+            className="bg-[#F6F6F6] h-full px-6 py-3 lg:text-xs rounded-full flex items-center gap-2 justify-between w-full xl:text-base"
           >
             Problems{" "}
             <FontAwesomeIcon
@@ -80,19 +79,28 @@ function Navbar() {
             />
           </button>
           <div
-            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 z-10 lg:absolute ${
+            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 z-10 lg:text-center lg:absolute ${
               showProblems ? "flex" : "hidden"
             }`}
           >
-            <Link className="px-6 py-3 nav-links" href="/">
+            <Link
+              className="px-6 lg:text-xs py-2 nav-links xl:text-base"
+              href="/"
+            >
               Problems 1
             </Link>
             <hr />
-            <Link className="px-6 py-3 nav-links" href="/">
+            <Link
+              className="px-6 lg:text-xs py-2 nav-links xl:text-base"
+              href="/"
+            >
               Problems 2
             </Link>
             <hr />
-            <Link className="px-6 py-3 nav-links" href="/">
+            <Link
+              className="px-6 lg:text-xs py-2 nav-links xl:text-base"
+              href="/"
+            >
               Problems 3
             </Link>
           </div>
@@ -100,9 +108,9 @@ function Navbar() {
         <div className="w-full">
           <button
             onClick={sProjects}
-            className="bg-[#F6F6F6] h-full px-6 py-3 rounded-full gap-2 flex items-center justify-between w-full"
+            className="bg-[#F6F6F6] h-full lg:text-xs px-6 py-3 rounded-full gap-2 flex items-center justify-between w-full xl:text-base"
           >
-            Projects{" "}
+            Projects
             <FontAwesomeIcon
               className="w-3 rounded-full"
               icon={faChevronDown}
@@ -113,22 +121,31 @@ function Navbar() {
               showProjects ? "flex" : "hidden"
             }`}
           >
-            <Link className="nav-links px-6 py-3" href="/">
+            <Link
+              className="nav-links lg:text-xs px-6 py-3 xl:text-base"
+              href="/"
+            >
               Projects 1
             </Link>
             <hr />
-            <Link className="nav-links px-6 py-3" href="/">
+            <Link
+              className="nav-links lg:text-xs px-6 py-3 xl:text-base"
+              href="/"
+            >
               Projects 2
             </Link>
             <hr />
-            <Link className="nav-links px-6 py-3" href="/">
+            <Link
+              className="nav-links lg:text-xs px-6 py-3 xl:text-base"
+              href="/"
+            >
               Projects 3
             </Link>
           </div>
         </div>
         <Link
           href="/problems"
-          className="bg-white flex items-center justify-between rounded-full px-4 py-3 border-2 hover:border-0  border-full hover:bg-[#ECF86E] w-full"
+          className="bg-white flex items-center justify-between rounded-full px-4 py-3 border-2 hover:border-0  border-full hover:bg-[#ECF86E] w-full lg:text-xs xl:text-base"
         >
           Contact Us
         </Link>
