@@ -40,7 +40,7 @@ function WorldGreener() {
 
   return (
     <div className="my-8 h-auto md:relative">
-      <div className="flex justify-center md:justify-between my-4 md:absolute md:top-1/4 border-2 border-red-300 md:w-full md:px-12 lg:px-18 xl:px-24 ">
+      <div className="flex justify-center md:justify-between my-4 md:absolute md:top-1/4 md:w-full md:px-12 lg:px-18 xl:px-24 ">
         <div className="flex">
           {ImageDetailsOne.map((item, index) => (
             <div className={item.classname} key={index}>
@@ -56,7 +56,7 @@ function WorldGreener() {
           ))}
         </div>
       </div>
-      <h3 className="px-8 text-4xl text-center manrope-500 sm:text-4xl md:text-6xl md:w-2/3 md:m-auto">
+      <h3 className="px-8 text-4xl text-center manrope-500 sm:text-4xl md:text-4xl lg:text-6xl md:w-2/3 md:m-auto">
         Let's make our world Cleaner & Greener!
       </h3>
       <p className="w-2/3 m-auto text-center mt-4 md:w-1/3">
