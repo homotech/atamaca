@@ -4,11 +4,7 @@ import React, { useState } from "react";
 import Logo from "@/public/logo.svg";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowDown,
-  faArrowDownAZ,
-  faChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 
@@ -38,7 +34,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+    <nav className="flex flex-col lg:flex-row lg:justify-between lg:items-center py-4">
       <div
         className={`order-2 lg:order-1 box-border lg:flex-row flex flex-col px-4 gap-4 mt-4 lg:m-0 lg:flex  lg:h-12 ${
           !showMenu && "sm:hidden "
@@ -59,6 +55,7 @@ function Navbar() {
 
         <button
           onClick={() => {
+            console.log(showMenu);
             setShowMenu(!showMenu);
           }}
           className="text-2xl lg:hidden"
@@ -68,7 +65,7 @@ function Navbar() {
       </Link>
       <div
         className={`order-3 lg:h-12 flex flex-col lg:flex-row px-4 gap-4 mt-4 lg:m-0 lg:flex lg:w-4/8 ${
-          !showMenu && "sm:hidden "
+          !showMenu && "sm:hidden"
         }`}
       >
         <div className="w-full">
@@ -83,7 +80,7 @@ function Navbar() {
             />
           </button>
           <div
-            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 lg:absolute ${
+            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 z-10 lg:absolute ${
               showProblems ? "flex" : "hidden"
             }`}
           >
@@ -112,7 +109,7 @@ function Navbar() {
             />
           </button>
           <div
-            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 lg:absolute ${
+            className={`flex flex-col bg-[#f6f6f6] rounded-2xl gap-4 p-4 mt-4 z-10 lg:absolute ${
               showProjects ? "flex" : "hidden"
             }`}
           >
