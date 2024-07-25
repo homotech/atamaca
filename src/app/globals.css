@@ -68,6 +68,9 @@ body {
 .rounded-4xl {
   border-radius: 2rem;
 }
+.text-xsm {
+  font-size: 0.7rem;
+}
 /* .nav-links:hover::before {
   display: inline-flex;
 } */

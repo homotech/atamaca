@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import React, { useState } from "react";
 import ImageDesert from "@/public/imageDesert.jpg";
+import ImageDeforestation from "@/public/imageDeforestation.jpeg";
+import ImageGHG from "@/public/imageGHG.jpg";
+import ImageGlacier from "@/public/imageGlacierMelting.jpeg";
 import Link from "next/link";
 import OutlinedComponent from "./outlinedComponent";
 
@@ -21,21 +24,28 @@ const ExploreProblems = () => {
       tags: ["Ecological Catastrophy", "Pollution Issues"],
       body: "Millions of tons of plastic threaten the lives of aquatic animals and ecosystem",
       image: ImageDesert,
-      alt: "",
+      alt: "An Image of a desert",
     },
     {
-      title: "Ocean Pollution",
-      tags: ["Ecological Catastrophy", "Pollution Issues"],
-      body: "Millions of tons of plastic threaten the lives of aquatic animals and ecosystem",
-      image: ImageDesert,
-      alt: "",
+      title: "Glacier Melting",
+      tags: ["Sea Level Rise", "Polar Ice"],
+      body: "Due to melting glaciers and warming, the habitats of animals and insects are changing",
+      image: ImageGlacier,
+      alt: "An Image of Glacier Melting",
     },
     {
-      title: "Ocean Pollution",
-      tags: ["Ecological Catastrophy", "Pollution Issues"],
-      body: "Millions of tons of plastic threaten the lives of aquatic animals and ecosystem",
-      image: ImageDesert,
-      alt: "",
+      title: "Forest Clearance",
+      tags: ["BioDiversity"],
+      body: "Forests are disappearing and with them unique species of plants and animals",
+      image: ImageDeforestation,
+      alt: "A deforestation in progress image",
+    },
+    {
+      title: "GHG Emissions",
+      tags: ["Air Pollution", "Climate Change", "Clean Energy"],
+      body: "Excessive green house gas emissions leads to climate disasters. Greenhouse gas emissions trap the sun's heat.",
+      image: ImageGHG,
+      alt: "Image of a GreenHouse gas",
     },
   ];
   const FAiconClass =
@@ -43,7 +53,7 @@ const ExploreProblems = () => {
   return (
     <div className="flex flex-wrap gap-4 p-4">
       {problemTitles.map((items, index) => (
-        <div className="flex flex-wrap w-full p-2 overflow-hidden rounded-3xl relative">
+        <div className="flex flex-wrap justify-between w-full p-2 overflow-hidden rounded-3xl relative">
           <div className="tags flex flex-wrap items-center gap-2 w-4/5">
             <FontAwesomeIcon icon={faCircle} className={FAiconClass} />
             {items.tags.map((items, index) => (
@@ -63,19 +73,20 @@ const ExploreProblems = () => {
           </button>
           <div className="w-full">
             <p className="text-white text-2xl manrope-600">{items.title}</p>
-            <p className="text-white">{items.body}</p>
+            <p className="text-white text-sm">{items.body}</p>
           </div>
           <Link
             href="/"
-            className="uppercase bg-white p-4 flex justify-between items-center rounded-full w-full"
+            className="uppercase bg-white px-6 py-4 flex justify-between items-center rounded-full w-full"
           >
             <span>Explore Problems</span>
             <FontAwesomeIcon icon={faChevronRight} />
           </Link>
+          <div className="bg-black absolute w-full h-full z-[-1] top-0 left-0 opacity-25"></div>
           <Image
-            src={ImageDesert}
-            alt="image of a desert meeting a water body"
-            className="absolute w-full h-full top-0 left-0 z-[-1] object-cover"
+            src={items.image}
+            alt={items.alt}
+            className="absolute w-full h-full top-0 left-0 z-[-2] object-cover"
           />
         </div>
       ))}
