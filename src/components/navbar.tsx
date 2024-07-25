@@ -77,18 +77,18 @@ function Navbar() {
             Problems <FontAwesomeIcon className="w-3" icon={faChevronDown} />
           </button>
           <div
-            className={`flex flex-col bg-[#f6f6f6] rounded-2xl mt-4 z-10 lg:absolute ${
+            className={`flex flex-col bg-[#ECF86E] rounded-2xl mt-4 px-4 z-10 lg:absolute ${
               showProblems ? "flex" : "hidden"
             }`}
           >
             <Link className={subLinks} href="/">
               Problems 1
             </Link>
-            <hr />
+            <hr className="border-black" />
             <Link className={subLinks} href="/">
               Problems 2
             </Link>
-            <hr />
+            <hr className="border-black" />
             <Link className={subLinks} href="/">
               Problems 3
             </Link>
@@ -100,18 +100,18 @@ function Navbar() {
             <FontAwesomeIcon className="w-3" icon={faChevronDown} />
           </button>
           <div
-            className={`flex flex-col bg-[#f6f6f6] rounded-2xl mt-4 z-10 lg:absolute ${
+            className={`flex flex-col bg-[#ECF86E] rounded-2xl mt-4 px-4 z-10 lg:absolute ${
               showProjects ? "flex" : "hidden"
             }`}
           >
             <Link className={subLinks} href="/">
               Projects 1
             </Link>
-            <hr />
+            <hr className="border-black" />
             <Link className={subLinks} href="/">
               Projects 2
             </Link>
-            <hr />
+            <hr className="border-black" />
             <Link className={subLinks} href="/">
               Projects 3
             </Link>

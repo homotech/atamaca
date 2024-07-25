@@ -71,7 +71,7 @@ const ExploreProblems = () => {
           >
             <FontAwesomeIcon icon={faArrowRight} />
           </button>
-          <div className="w-full">
+          <div className="w-full mt-36 mb-4">
             <p className="text-white text-2xl manrope-600">{items.title}</p>
             <p className="text-white text-sm">{items.body}</p>
           </div>

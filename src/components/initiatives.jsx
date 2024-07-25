@@ -1,6 +1,7 @@
+"use client";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import OutlinedComponent from "./outlinedComponent";
 import Image from "next/image";
 import ImageBeach from "@/public/imageBeach.jpeg";
@@ -9,12 +10,13 @@ import ImageEducationalEvents from "@/public/imageEducationalEvents.jpeg";
 import ImageParkCleaning from "@/public/imageParkCleaning.jpeg";
 
 const Initiatives = () => {
+  const [showImage, setShowImage] = useState(null);
   const listDetails = [
     {
       title: "Tree Planting",
       tags: ["green and cleaner"],
       dates: "12/03/23",
-      image: ImageBeach,
+      image: ImageTreePlanting,
     },
     {
       title: "Beach Cleanup",
@@ -26,13 +28,13 @@ const Initiatives = () => {
       title: "Educational Events",
       tags: ["courses", "green Initiatives"],
       dates: "06/06/23",
-      image: ImageBeach,
+      image: ImageEducationalEvents,
     },
     {
       title: "Park Cleaning",
       tags: ["day off cleaning"],
       dates: "18/08/23",
-      image: ImageBeach,
+      image: ImageParkCleaning,
     },
   ];
   const subHeader = [
