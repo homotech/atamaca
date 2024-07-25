@@ -5,7 +5,7 @@ interface OutlinedComponentProps {
   additionalClass: React.ReactNode;
 }
 function OutlinedComponent(props: OutlinedComponentProps) {
-  const classN = `px-3 py-1 rounded-full box-border manrope-400 border-2 border-black w-fit text-sm ${props.additionalClass}`;
+  const classN = `px-3 py-1 rounded-full box-border manrope-400 border-2 w-fit text-sm ${props.additionalClass}`;
 
   return <p className={classN}>{props.title}</p>;
 }
