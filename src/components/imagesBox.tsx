@@ -13,7 +13,7 @@ function ImagesBox() {
   return (
     <div className="flex flex-col lg:flex-row px-4">
       <div className={`bg-[#F6F6F6] ${imageBoxClassName}`}>
-        <p className={`text-black ${paragraphClassName}`}>We</p>
+        <p className={`text-black relative z-10 text-6xl`}>We</p>
       </div>
       <div className={`${imageBoxClassName}`}>
         <p className={paragraphClassName}>Protect</p>
@@ -31,7 +31,7 @@ function ImagesBox() {
         <FontAwesomeIcon icon={faArrowDown} className="text-8xl md:hidden" />
       </div>
       <div className={`${imageBoxClassName} relative flex`}>
-        <p className="relative z-10 text-white text-6xl">Nature</p>
+        <p className={` ${paragraphClassName}`}>Nature</p>
         <Image
           src={imageTwo}
           alt="Images of rocks"

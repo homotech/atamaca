@@ -6,12 +6,16 @@ import NewsLetter from "../components/newsLetter";
 import Footer from "../components/footer";
 import WorldGreener from "../components/worldGreener";
 import ImagesBox from "../components/imagesBox";
+import Initiatives from "@/src/components/initiatives";
+import ExploreProblems from "../components/exploreProblems";
 
 export default function Home() {
   return (
     <main className="">
       <WorldGreener />
       <ImagesBox />
+      <Initiatives />
+      <ExploreProblems />
       <div className="bg-[#f6f6f6]">
         <NewsLetter />
         <Footer />

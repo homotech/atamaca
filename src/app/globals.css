@@ -65,6 +65,9 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: font-weight 0.3s;
 }
+.rounded-4xl {
+  border-radius: 2rem;
+}
 /* .nav-links:hover::before {
   display: inline-flex;
 } */
