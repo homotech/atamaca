@@ -1,5 +1,9 @@
 "use client";
-import { faChevronRight, faCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowDown,
+  faChevronRight,
+  faCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -18,6 +22,7 @@ const ExploreProblems = () => {
     console.log(index);
     console.log(openProblems);
   };
+
   const problemTitles = [
     {
       title: "Ocean Pollution",
@@ -51,38 +56,72 @@ const ExploreProblems = () => {
   const FAiconClass =
     "text-[#ECF86E] border-2 border-[#ECF86E] p-1 rounded-full";
   return (
-    <div className="flex flex-wrap gap-4 p-4">
+    <div className="flex flex-wrap gap-4 p-4 lg:flex-nowrap w-full justify-evenly">
       {problemTitles.map((items, index) => (
-        <div className="flex flex-wrap justify-between w-full p-2 overflow-hidden rounded-3xl relative">
-          <div className="tags flex flex-wrap items-center gap-2 w-4/5">
-            <FontAwesomeIcon icon={faCircle} className={FAiconClass} />
-            {items.tags.map((items, index) => (
-              <OutlinedComponent
-                key={index}
-                title={items}
-                additionalClass="border-[#ECF86E] text-[#ECF86E]"
+        <div
+          key={index}
+          className={`flex flex-wrap lg:flex-col justify-between w-full h-128 p-4 overflow-hidden rounded-3xl relative transition-all duration-300 ${
+            openProblems === index ? "lg:flex-1.5" : "lg:flex-1"
+          }`}
+        >
+          <div className="flex">
+            {/* The tags */}
+            <div
+              className={
+                openProblems === index
+                  ? "tags flex flex-wrap items-center gap-2 w-4/5  mb-36"
+                  : "hidden"
+              }
+            >
+              <FontAwesomeIcon icon={faCircle} className={FAiconClass} />
+              {items.tags.map((items, index) => (
+                <OutlinedComponent
+                  key={index}
+                  title={items}
+                  additionalClass="border-[#ECF86E] text-[#ECF86E]"
+                />
+              ))}
+              <FontAwesomeIcon icon={faCircle} className={FAiconClass} />
+            </div>
+
+            {/* the arrow button  */}
+            <button
+              onClick={() => handleToggle(index)}
+              className={`rounded-full bg-[#ECF86E] w-12 h-12 lg:ml-auto ${
+                openProblems === index ? "" : "order-2 lg:order-none"
+              }`}
+            >
+              <FontAwesomeIcon
+                icon={openProblems === index ? faArrowRight : faArrowDown}
               />
-            ))}
-            <FontAwesomeIcon icon={faCircle} className={FAiconClass} />
+            </button>
           </div>
-          <button
-            onClick={() => handleToggle(index)}
-            className="rounded-full bg-[#ECF86E] w-12 h-12"
-          >
-            <FontAwesomeIcon icon={faArrowRight} />
-          </button>
-          <div className="w-full mt-36 mb-4">
-            <p className="text-white text-2xl manrope-600">{items.title}</p>
-            <p className="text-white text-sm">{items.body}</p>
+          <div className="text-and-link flex flex-col">
+            <div
+              className={`w-5/6 lg:w-full mb-4 ${
+                openProblems === index ? "" : "order-1 lg:order-none"
+              }`}
+            >
+              <p className="text-white text-2xl manrope-600">{items.title}</p>
+              <p className="text-white text-sm">{items.body}</p>
+            </div>
+
+            {/* Explore Problems Link  */}
+            <Link
+              href="/"
+              className={`uppercase bg-white px-6 py-4 flex justify-between items-center rounded-full w-full ${
+                openProblems === index ? "" : "order-3 lg:order-none"
+              }`}
+            >
+              <span>Explore Problems</span>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </Link>
           </div>
-          <Link
-            href="/"
-            className="uppercase bg-white px-6 py-4 flex justify-between items-center rounded-full w-full"
-          >
-            <span>Explore Problems</span>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </Link>
-          <div className="bg-black absolute w-full h-full z-[-1] top-0 left-0 opacity-25"></div>
+
+          {/* The black Overlay */}
+          <div className="bg-black absolute w-full h-full z-[-1] top-0 left-0 opacity-35"></div>
+
+          {/* The Background image  */}
           <Image
             src={items.image}
             alt={items.alt}

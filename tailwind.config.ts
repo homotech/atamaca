@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      flex: {
+        1.5: "1.5 1 0%",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
