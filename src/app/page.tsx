@@ -8,10 +8,12 @@ import WorldGreener from "../components/worldGreener";
 import ImagesBox from "../components/imagesBox";
 import Initiatives from "@/src/components/initiatives";
 import ExploreProblems from "../components/exploreProblems";
+import MajorHeroSection from "../components/majorHeroSection";
 
 export default function Home() {
   return (
     <main className="">
+      <MajorHeroSection />
       <WorldGreener />
       <ImagesBox />
       <Initiatives />
