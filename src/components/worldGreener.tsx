@@ -37,7 +37,6 @@ function WorldGreener() {
         "border border-[#ECF86E] w-12 h-12 overflow-hidden md:relative rounded-full ",
     },
   ];
-
   return (
     <div className="my-8 h-auto md:relative">
       <div className="flex justify-center md:justify-between my-4 md:absolute md:top-1/4 md:w-full md:px-12 lg:px-18 xl:px-24 ">

@@ -71,6 +71,40 @@ body {
 .text-xsm {
   font-size: 0.7rem;
 }
+.z-one {
+  z-index: 1;
+}
+.z-two {
+  z-index: 2;
+}
+.z-three {
+  z-index: 3;
+}
+.curved-rectangle {
+  border-radius: 20px 20px 0 0;
+}
+.curved-rectangle::before {
+  content: "";
+  background: transparent;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 100%;
+  bottom: 0;
+  border-radius: 0 0 0 20px;
+  box-shadow: -6px 4px #fff;
+}
+.curved-rectangle::after {
+  content: "";
+  background: transparent;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 100%;
+  bottom: 0;
+  border-radius: 0 0 20px 0;
+  box-shadow: 6px 4px #fff;
+}
 @media only screen and (min-width: 1024px) {
   .h-128 {
     height: 36rem;

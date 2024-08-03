@@ -24,7 +24,10 @@ export default function NewsLetter() {
           action=""
           className="flex justify-between mt-4 w-full gap-4 md:mb-6"
         >
-          <InputComponent placeholder="Enter Email Address"></InputComponent>
+          <InputComponent
+            additionalClass=""
+            placeholder="Enter Email Address"
+          ></InputComponent>
           <Button
             title="Subscribe"
             icons={faArrowRight}
