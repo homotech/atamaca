@@ -47,12 +47,12 @@ const MajorHeroSection = () => {
     <div className="flex flex-col p-4">
       <div className="bg-[#ECF86E] px-4 pt-8 rounded-2xl">
         <p className="text-4xl text-center">
-          Saving{" "}
+          Saving
           <Image
             src={DottedCircle}
             className="inline w-1/12"
             alt="A dotted circle Icon"
-          />{" "}
+          />
           Nature & Fighting <u>Climate</u> Change together.
         </p>
         <form
@@ -150,8 +150,8 @@ const MajorHeroSection = () => {
           </div>
           <p className="text-[#ECF86E]">Find us on social networks</p>
         </div>
-        <div className="bg-white flex w-64 ml-auto rounded-l-2xl px-2">
-          <p className="text-xs ">
+        <div className="bg-white flex w-64 ml-auto rounded-l-2xl px-4 py-2 border-red-500 border-2">
+          <p className="text-xs ml-auto">
             We are an organization dedicated to protecting the environment &
             nature.
           </p>
