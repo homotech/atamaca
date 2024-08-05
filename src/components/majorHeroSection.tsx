@@ -1,11 +1,8 @@
 "use client";
 import {
-  faArrowLeftRotate,
   faArrowRight,
   faArrowUp,
   faCircle,
-  faCircleArrowRight,
-  faCircleDot,
   faMouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,6 +17,7 @@ import Button from "./button";
 import OutlinedComponent from "./outlinedComponent";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import MHSImage from "@/public/majorHeroSectionImage.jpg";
+import Volunteers from "@/public/Volunteers.jpg";
 
 const MajorHeroSection = () => {
   const avatars = [
@@ -47,7 +45,7 @@ const MajorHeroSection = () => {
   ];
   return (
     <div className="flex flex-col p-4">
-      <div className="bg-[#ECF86E] px-4 pt-4 rounded-2xl">
+      <div className="bg-[#ECF86E] px-4 pt-8 rounded-2xl">
         <p className="text-4xl text-center">
           Saving{" "}
           <Image
@@ -83,57 +81,87 @@ const MajorHeroSection = () => {
         </div>
         <div className="curved-rectangle w-16 mx-auto mt-4 h-8 bg-white relative"></div>
       </div>
-      <div className="icon relative z-10 flex justify-center align-center h-4 border-2 border-red-200">
-        <FontAwesomeIcon icon={faMouse} className="text-4xl -m-4" />
+      <div className="icon relative z-10 flex justify-center items-center h-4">
+        <FontAwesomeIcon icon={faMouse} className="text-4xl" />
       </div>
-      <div className="rounded-2xl overflow-hidden">
-        Testing
-        <div className="we-and-our-volunteers">
-          <div className="bg-[#ECF86E] w-12 h-12 rounded-full flex justify-center items-center">
+      <div className="rounded-2xl overflow-hidden relative">
+        <div className="curved-rectangle-buttom w-16 mx-auto h-8 bg-white relative"></div>
+
+        {/* We and our Volunteers  */}
+        <div className="we-and-our-volunteers flex flex-row w-48 ml-2 overflow-hidden relative">
+          <div className="bg-[#ECF86E] w-8 h-8 rounded-full flex justify-center items-center absolute right-0">
             <FontAwesomeIcon className="rotate-45 text-2xl" icon={faArrowUp} />
           </div>
-          <div></div>
-          <div>
+          <div className="overflow-hidden w-1/2 p-2">
+            <Image
+              src={Volunteers}
+              className="rounded-xl"
+              alt="A photo of one of our team mates"
+            />
+          </div>
+          <div className="w-1/2 mt-auto p-2">
             <FontAwesomeIcon
               icon={faCircle}
-              className="p-1 border border-red-200 rounded-full"
+              className="p-1 border-2 text-xs border-[#ECF86E] rounded-full text-[#ECF86E]"
             />
-            <p>We & our volunteers.</p>
+            <p className="manrope-600 leading-5 text-sm">We & our volunteers</p>
+          </div>
+          <div className="absolute w-full h-full flex">
+            <div className=" z-[-1] w-4/5 h-full rounded-l-2xl rounded-t-2xl bg-white bottom-0 left-0"></div>
+            <div className="half-rect relative z-[-1] w-1/5 h-24 rounded-r-2xl bg-white top-0 left-0 mt-auto"></div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <FontAwesomeIcon
             icon={faCircle}
-            className="p-1 border border-red-200 rounded-full"
+            className="p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full"
           />
-          <OutlinedComponent title="GHG Emissions" additionalClass="" />
+          <OutlinedComponent
+            title="GHG Emissions"
+            additionalClass="text-[#ECF86E] border-[#ECF86E]"
+          />
         </div>
         <div className="flex items-center gap-2">
           <FontAwesomeIcon
             icon={faCircle}
-            className="p-1 border border-red-200 rounded-full"
+            className="p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full"
           />
-          <OutlinedComponent title="Ocean Pollution" additionalClass="" />
+          <OutlinedComponent
+            title="Ocean Pollution"
+            additionalClass="text-[#ECF86E] border-[#ECF86E]"
+          />
         </div>
         <div className="flex items-center gap-2">
           <FontAwesomeIcon
             icon={faCircle}
-            className="p-1 border border-red-200 rounded-full"
-          />
-          <OutlinedComponent title="Deforestations" additionalClass="" />
-        </div>
-        <div className="flex">
-          <OutlinedComponent
-            title={<FontAwesomeIcon icon={faInstagram} />}
-            additionalClass=""
+            className="p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full"
           />
           <OutlinedComponent
-            title={<FontAwesomeIcon icon={faFacebook} />}
-            additionalClass=""
-          />{" "}
-          Find us on social networks
+            title="Deforestations"
+            additionalClass="text-[#ECF86E] border-[#ECF86E]"
+          />
         </div>
-        <Image src={MHSImage} alt="An Image of a desert" className="" />
+        <div className="flex items-center gap-2">
+          <div className="flex p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full w-8 h-8 justify-center items-center">
+            <FontAwesomeIcon icon={faInstagram} />
+          </div>
+          <div className="flex p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full w-8 h-8 justify-center items-center">
+            <FontAwesomeIcon icon={faFacebook} />
+          </div>
+          <p className="text-[#ECF86E]">Find us on social networks</p>
+        </div>
+        <div className="bg-white flex w-64 ml-auto rounded-l-2xl px-2">
+          <p className="text-xs ">
+            We are an organization dedicated to protecting the environment &
+            nature.
+          </p>
+        </div>
+        <div className="rotate-12 bg-white absolute h-16 w-8 top-80 left-[124px] z-[-1] rounded-t-2xl"></div>
+        <Image
+          src={MHSImage}
+          alt="An Image of a desert"
+          className="w-full h-full object-cover absolute top-0 left-0 z-[-5]"
+        />
       </div>
     </div>
   );

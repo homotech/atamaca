@@ -110,7 +110,7 @@ const Initiatives = () => {
             </div>
             {showImage === index && (
               <div
-                className={`w-full lg:h-128 lg:absolute lg:top-0 relative lg:mt-4 border-2 border-red-200 w-full h-auto flex justify-center items-center my-8`}
+                className={`w-full lg:h-128 lg:absolute lg:top-0 relative lg:mt-4 w-full h-auto flex justify-center items-center my-8`}
               >
                 <div className="rounded-xl overflow-hidden absolute lg:relative h-48 w-2/3 lg:w-48 lg:h-36 lg:ml-92 -rotate-6">
                   <Image

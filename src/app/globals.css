@@ -8,6 +8,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --border-radius: 20px;
+  --outer-curve-size: 20px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,29 +83,67 @@ body {
   z-index: 3;
 }
 .curved-rectangle {
-  border-radius: 20px 20px 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+.curved-rectangle-buttom {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+.curved-rectangle-buttom::after,
+.curved-rectangle-buttom::before {
+  content: "";
+}
+.curved-rectangle-buttom::before {
+  background: transparent;
+  width: var(--outer-curve-size);
+  height: var(--outer-curve-size);
+  position: absolute;
+  top: -1%;
+  right: 99%;
+  border-radius: 0px var(--border-radius) 0 0;
+  box-shadow: 4px -6px #fff;
+}
+.curved-rectangle-buttom::after {
+  background: transparent;
+  width: var(--outer-curve-size);
+  height: var(--outer-curve-size);
+  position: absolute;
+  top: -1%;
+  left: 99%;
+  border-radius: var(--border-radius) 0 0 0;
+  box-shadow: -4px -6px #fff;
 }
 .curved-rectangle::before {
   content: "";
   background: transparent;
   position: absolute;
-  width: 25px;
-  height: 25px;
-  left: 100%;
-  bottom: 0;
-  border-radius: 0 0 0 20px;
-  box-shadow: -6px 4px #fff;
+  width: var(--outer-curve-size);
+  height: var(--outer-curve-size);
+  left: 99%;
+  bottom: -1%;
+  border-radius: 0 0 0 var(--border-radius);
+  box-shadow: -7px 4px #fff;
 }
 .curved-rectangle::after {
   content: "";
   background: transparent;
   position: absolute;
+  width: var(--outer-curve-size);
+  height: var(--outer-curve-size);
+  right: 99%;
+  bottom: -1%;
+  border-radius: 0 0 var(--border-radius) 0;
+  box-shadow: 6px 4px #fff;
+}
+.half-rect::after {
+  content: "";
+  position: absolute;
   width: 25px;
   height: 25px;
-  right: 100%;
-  bottom: 0;
-  border-radius: 0 0 20px 0;
-  box-shadow: 6px 4px #fff;
+  background: transparent;
+  bottom: 100%;
+  left: 0px;
+  border-radius: 0 0 0 16px;
+  box-shadow: -4px 6px #fff;
 }
 @media only screen and (min-width: 1024px) {
   .h-128 {
