@@ -11,7 +11,7 @@ export default function NewsLetter() {
       <div className="md:w-5/12 md:mt-10">
         <OutlinedComponent
           title="newsletter"
-          additionalClass="border-[#898C8D]"
+          additionalClass="border-[#898C8D] border"
         ></OutlinedComponent>
       </div>
 

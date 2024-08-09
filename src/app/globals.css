@@ -145,6 +145,35 @@ body {
   border-radius: 0 0 0 16px;
   box-shadow: -4px 6px #fff;
 }
+.diagonal-shape {
+  top: 0%;
+  z-index: -1;
+  left: -2%;
+}
+.curved-about::before {
+  content: "";
+  background-color: transparent;
+  z-index: 4;
+  rotate: 5.5deg;
+  width: var(--outer-curve-size);
+  height: 20px;
+  position: absolute;
+  left: -24.8px;
+  bottom: -0.75px;
+  border-radius: 0 0 var(--border-radius) 0;
+  box-shadow: 6px 9px 0px 5px #fff;
+}
+.curved-about::after {
+  content: "";
+  background-color: transparent;
+  width: var(--outer-curve-size);
+  height: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  border-radius: 0 0 var(--border-radius) 0;
+  box-shadow: 5px 7px 0px 5px #fff;
+}
 @media only screen and (min-width: 1024px) {
   .h-128 {
     height: 36rem;

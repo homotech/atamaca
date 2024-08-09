@@ -1,6 +1,8 @@
 "use client";
 import {
   faArrowDown,
+  faArrowLeft,
+  faArrowUp,
   faChevronRight,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
@@ -60,18 +62,19 @@ const ExploreProblems = () => {
       {problemTitles.map((items, index) => (
         <div
           key={index}
-          className={`flex flex-wrap lg:flex-col justify-between w-full h-128 p-4 overflow-hidden rounded-3xl relative transition-all duration-300 ${
+          className={`flex flex-col lg:flex-col justify-between w-full h-128 p-4 overflow-hidden rounded-3xl relative transition-all duration-300 ${
             openProblems === index ? "lg:flex-1.5" : "lg:flex-1"
           }`}
         >
           <div className="flex">
             {/* The tags */}
             <div
-              className={
-                openProblems === index
-                  ? "tags flex flex-wrap items-center gap-2 w-4/5  mb-36"
-                  : "hidden"
-              }
+              className={`transition-opacity duration-500
+                ${
+                  openProblems === index
+                    ? "tags flex opacity-100 flex-wrap items-center gap-2 w-4/5  mb-36"
+                    : "hidden opacity-0"
+                }`}
             >
               <FontAwesomeIcon icon={faCircle} className={FAiconClass} />
               {items.tags.map((items, index) => (
@@ -87,21 +90,22 @@ const ExploreProblems = () => {
             {/* the arrow button  */}
             <button
               onClick={() => handleToggle(index)}
-              className={`rounded-full bg-[#ECF86E] w-12 h-12 lg:ml-auto ${
-                openProblems === index ? "" : "order-2 lg:order-none"
+              className={`rounded-full flex justify-center items-center bg-[#ECF86E] w-12 h-12 lg:ml-auto absolute right-0 mr-4 ${
+                openProblems === index ? "" : "lg:order-none"
               }`}
             >
               <FontAwesomeIcon
-                icon={openProblems === index ? faArrowRight : faArrowDown}
+                className="hidden lg:block"
+                icon={openProblems === index ? faArrowLeft : faArrowRight}
+              />
+              <FontAwesomeIcon
+                className="block lg:hidden"
+                icon={openProblems === index ? faArrowUp : faArrowDown}
               />
             </button>
           </div>
-          <div className="text-and-link flex flex-col">
-            <div
-              className={`w-5/6 lg:w-full mb-4 ${
-                openProblems === index ? "" : "order-1 lg:order-none"
-              }`}
-            >
+          <div className="flex flex-col">
+            <div className={`w-5/6 lg:w-full mb-4`}>
               <p className="text-white text-2xl manrope-600">{items.title}</p>
               <p className="text-white text-sm">{items.body}</p>
             </div>
@@ -109,9 +113,7 @@ const ExploreProblems = () => {
             {/* Explore Problems Link  */}
             <Link
               href="/"
-              className={`uppercase bg-white px-6 py-4 flex justify-between items-center rounded-full w-full ${
-                openProblems === index ? "" : "order-3 lg:order-none"
-              }`}
+              className={`uppercase bg-white px-6 py-4 flex justify-between items-center rounded-full w-full`}
             >
               <span>Explore Problems</span>
               <FontAwesomeIcon icon={faChevronRight} />

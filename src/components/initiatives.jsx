@@ -47,10 +47,10 @@ const Initiatives = () => {
     },
   ];
   const subHeader = [
-    { title: "titles", className: "w-1/6 text-[#898C8D] capitalize" },
-    { title: "tags", className: "w-2/6 text-[#898C8D] capitalize" },
-    { title: "dates", className: "w-2/6 text-[#898C8D] capitalize" },
-    { title: "", className: "w-1/6 text-[#898C8D] capitalize" },
+    { title: "titles", className: "w-2/6 text-[#898C8D] capitalize" },
+    { title: "tags", className: "w-3/6 text-[#898C8D] capitalize" },
+    { title: "dates", className: "1-2/6 text-[#898C8D] capitalize" },
+    { title: "", className: "w-12 text-[#898C8D] capitalize" },
   ];
   return (
     <div className="p-4">
@@ -59,7 +59,7 @@ const Initiatives = () => {
         <h1 className="text-4xl manrope-600 w-full">
           Our initiatives for 2023
         </h1>
-        <p className="text-sm text-[#898C8D]">
+        <p className="text-sm text-[#898C8D] w-72">
           Find out what projects we are implementing to protect nature
         </p>
       </div>
@@ -79,12 +79,12 @@ const Initiatives = () => {
           >
             <div className="w-full flex justify-between items-center gap-2">
               {/* title  */}
-              <p className="text-lg manrope-600 w-2/6 lg:w-1/6 text-wrap border-yellow-200 border-2">
+              <p className="w-2/6 text-lg manrope-600 lg:w-1/6 text-wrap">
                 {item.title}
               </p>
 
               {/* tags */}
-              <div className="w-2/6 lg:w-3/8 flex flex-wrap items-start border-blue-200 border-2">
+              <div className="w-3/6 lg:w-3/8 flex flex-wrap items-start">
                 {item.tags.map((items, index) => (
                   <OutlinedComponent
                     title={items}
@@ -94,12 +94,10 @@ const Initiatives = () => {
               </div>
 
               {/* dates */}
-              <p className="w-2/6 lg:w-3/8 border-red-200 border-2">
-                {item.dates}
-              </p>
+              <p className="w-1/6 lg:w-3/8">{item.dates}</p>
 
               {/* The button that drops it down */}
-              <div className="w-1/6 lg:w-1/8 flex justify-center items-center border-green-200 border-2">
+              <div className="w-12 lg:w-1/8 flex justify-center items-center">
                 <button className="w-8 h-8 text-base rounded-full bg-white">
                   <FontAwesomeIcon
                     icon={faArrowDown}
