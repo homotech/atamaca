@@ -44,7 +44,7 @@ const MajorHeroSection = () => {
     },
   ];
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col lg:flex-row p-4">
       <div className="bg-[#ECF86E] px-4 pt-8 rounded-2xl">
         <p className="text-4xl text-center">
           Saving
@@ -111,7 +111,7 @@ const MajorHeroSection = () => {
             <div className="half-rect relative z-[-1] w-1/5 h-24 rounded-r-2xl bg-white top-0 left-0 mt-auto"></div>
           </div>
         </div>
-        <div className="absolute ml-48 mt-12 flex items-center gap-2">
+        <div className="absolute ml-52 -mt-4 flex items-center gap-2">
           <FontAwesomeIcon
             icon={faCircle}
             className="p-1 border text-[#ECF86E] border-[#ECF86E] rounded-full"
@@ -121,7 +121,7 @@ const MajorHeroSection = () => {
             additionalClass="text-[#ECF86E] border border-[#ECF86E]"
           />
         </div>
-        <div className="absolute ml-24 mt-24 flex items-center gap-2">
+        <div className="absolute ml-36 mt-8 flex items-center gap-2">
           <FontAwesomeIcon
             icon={faCircle}
             className="p-1 border text-xs text-[#ECF86E] border-[#ECF86E] rounded-full"
@@ -131,7 +131,7 @@ const MajorHeroSection = () => {
             additionalClass="text-[#ECF86E] border border-[#ECF86E]"
           />
         </div>
-        <div className="absolute ml-52 mt-4 flex items-center gap-2">
+        <div className="absolute ml-56 -mt-16 flex items-center gap-2">
           <FontAwesomeIcon
             icon={faCircle}
             className="p-1 border text-xs text-[#ECF86E] border-[#ECF86E] rounded-full"
@@ -142,22 +142,22 @@ const MajorHeroSection = () => {
           />
         </div>
 
-        <div>
-          <p className="text-4xl text-white">
+        <div className="absolute mt-36 px-4 w-2/3">
+          <p className="text-2xl text-white">
             Join us in fighting environmental problems
           </p>
         </div>
-        <div className="flex items-center gap-2 ml-auto">
-          <div className="flex p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full w-8 h-8 justify-center items-center">
+        <div className="flex items-center gap-2 ml-auto px-4 mt-36 absolute">
+          <div className="flex p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full w-4 h-4 justify-center items-center">
             <FontAwesomeIcon icon={faInstagram} />
           </div>
-          <div className="flex p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full w-8 h-8 justify-center items-center">
+          <div className="flex p-1 border-2 text-[#ECF86E] border-[#ECF86E] rounded-full w-4 h-4 justify-center items-center">
             <FontAwesomeIcon icon={faFacebook} />
           </div>
-          <p className="text-[#ECF86E]">Find us on social networks</p>
+          <p className="text-[#ECF86E] text-xs">Find us on social networks</p>
         </div>
         <div className="curved-about relative bg-white flex w-56 ml-auto mt-48 rounded-l-2xl pl-4 py-2">
-          <p className="text-xs manrope-400 ml-auto text-right w-56">
+          <p className="text-xs manrope-00 ml-auto text-right w-56 pr-2">
             We are an organization dedicated to protecting the environment &
             nature.
           </p>
@@ -165,6 +165,7 @@ const MajorHeroSection = () => {
         </div>
         {/* The black Overlay */}
         <div className="bg-black absolute w-full h-full z-[-4] top-0 left-0 opacity-35"></div>
+        {/* The background image */}
         <Image
           src={MHSImage}
           alt="An Image of a desert"
